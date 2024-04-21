@@ -22,3 +22,31 @@ searchInputEl.addEventListener("blur", () => {
 });
 
 // 즉 자바스크립트는 DOM요소를 선택하고 특정 이벤트에 원하는 스타일링에 해당하는 클래스를 추가하거나 삭제하면서 요소를 동적으로 처리할 수 있도록 가능하게 해준다.
+
+const badgeEl = document.querySelector("header .badges");
+
+// window객체는 브라우저(보고 있는 화면 자체를 의미)가 가지고 있는 여러 명령을 가지고 있다. 브라우저에 스크롤 이벤트가 발생할 때
+// loadsh 라이브러리를 가지고 온 다음 _.throttle() 메소드를 사용한다.
+// 첫번째 인수로는 함수가 들어가고 두번째 인수로는 ms단위로 함수가 한번 호출될 시간을 넘긴다.
+// 0.3초 단위로 부하를 주어서 함수가 연속적으로 호출되는 것을 방지하고 호출될 수 있도록 설정할 수 있다.
+// window.scrollY라는 객체를 통해 위에서 부터 몇 px에 위치해있는지를 알 수 있다. 여기서 500px 보다 커지면 배지를 숨기도록 로직을 작성한다.
+// 배지를 숨기고 보이게 하는 것은 따로 클래스로 지정해서 추가하고 삭제하도록 한다.
+// gsap 에서의 to 메서드를 통해서 요소와, 지속시간, 옵션을 인자로 보낸다.
+
+window.addEventListener(
+  "scroll",
+  _.throttle(() => {
+    if (window.scrollY > 500) {
+      badgeEl.style.display = "none";
+      gsap.to(badgeEl, 0.6, {
+        opacity: 0,
+        display: "none",
+      });
+    } else {
+      gsap.to(badgeEl, 0.6, {
+        opacity: 1,
+        display: "block",
+      });
+    }
+  }, 300)
+);

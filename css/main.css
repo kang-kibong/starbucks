@@ -5,6 +5,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
+  height: 3000px;
 }
 
 img {
@@ -22,7 +23,13 @@ a {
 }
 
 /* HEADER */
+
+/* 페이지를 스크롤해도 header가 상단에 고정되게 설정하려면 position을 fixed로 설정한다.*/
+/* block요소는 기본적으로 가로 넓이를 최대한으로 잡으려고 시도하지만 position aboluste나 fixed로 설정하면 가로 넓이를 최소한(width: auto)으로 잡기 때문에 width값을 최대한으로 잡기 위해서는 width: 100% 로 설정하면 된다.*/
 header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: #f6f5f0;
   border-bottom: 1px solid #c8c8c8;
 }
@@ -217,4 +224,21 @@ header .main-menu .item .item__contents .contents__texture h4 {
 header .main-menu .item .item__contents .contents__texture p {
   color: #669900;
   margin: 4px 0 14px;
+}
+
+/* badge들의 위치 설정을 위해 position을 abosolute로 설정하고 부모 요소인 header에 relative를 설정한다. 이후 top, right를 통해 badge들의 위치를 설정한다. */
+header .badges {
+  position: absolute;
+  top: 132px;
+  right: 12px;
+}
+
+/* badge에 border-radius를 설정해도 안에 있는 이미지가 영역 밖으로 나오기 떄문에 overflow: hidden을 통해 이를 막아준다. */
+/* box-shadow를 통해 요소에 그림자를 부여할수 있다. x축으로 4px y축으로 4px으로 그림자를 위치하고 blur를 10px로 부여하고 rgba를 통해 검정색을 추가하는데 투명도를 0.15를 설정한다. */
+header .badges .badge {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0, 0.15);
+  cursor: pointer;
 }
