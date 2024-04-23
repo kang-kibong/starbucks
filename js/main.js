@@ -50,3 +50,15 @@ window.addEventListener(
     }
   }, 300)
 );
+
+// fade-in을 클래스로 갖는 요소들을 배열에 할당한다.
+const fadeEls = document.querySelectorAll(".visual .fade-in");
+
+// forEach를 통해 fadeEls를 순회하고 각 fadeEl마다 gsap 라이브러리 메서드를 통해 애니메이션을 부여한다.
+// 각 index(0부터 시작) + 1 * 0.7만큼 지연시간을 주고 각 element마다 다른 지연시간을 부여하도록한다. 
+fadeEls.forEach((fadeEl, index) => {
+  gsap.to(fadeEl, 1, {
+    delay: (index + 1) * 0.7, // 0.7 => 1.4 => 2.1 => 2.7
+    opacity: 1,
+  });
+});
