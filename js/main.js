@@ -55,10 +55,17 @@ window.addEventListener(
 const fadeEls = document.querySelectorAll(".visual .fade-in");
 
 // forEach를 통해 fadeEls를 순회하고 각 fadeEl마다 gsap 라이브러리 메서드를 통해 애니메이션을 부여한다.
-// 각 index(0부터 시작) + 1 * 0.7만큼 지연시간을 주고 각 element마다 다른 지연시간을 부여하도록한다. 
+// 각 index(0부터 시작) + 1 * 0.7만큼 지연시간을 주고 각 element마다 다른 지연시간을 부여하도록한다.
 fadeEls.forEach((fadeEl, index) => {
   gsap.to(fadeEl, 1, {
     delay: (index + 1) * 0.7, // 0.7 => 1.4 => 2.1 => 2.7
     opacity: 1,
   });
+});
+
+// 첫번째 인자로 CSS 선택자를 넘기고 두번째 인자로 옵션(객체)를 넘긴다.
+new Swiper(".notice-line .swiper-container", {
+  direction: "vertical",
+  autoplay: true,
+  loop: true,
 });
