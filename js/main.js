@@ -101,3 +101,24 @@ promotionToggleBtn.addEventListener("click", () => {
   }
   promotionEl.classList.remove("hide");
 });
+
+function random(min, max) {
+  return parseFloat((Math.random() * (max - min) + min).toFixed(2));
+}
+
+function floatingObject(selector, delay, size) {
+  // 동작시간을 random으로 변경
+  gsap.to(selector, random(1.5, 2.5), {
+    y: size,
+    // -1 부분을 yoyo를 true로 줘서 반복될 수 있게 설정
+    repeat: -1,
+    yoyo: true,
+    ease: "power2.in",
+    delay: random(0, delay),
+  });
+}
+
+// 요소, 시간, 범위
+floatingObject(".floating1", 1, 15);
+floatingObject(".floating2", 0.5, 15);
+floatingObject(".floating3", 1.5, 20);
