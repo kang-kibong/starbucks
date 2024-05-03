@@ -33,6 +33,8 @@ const badgeEl = document.querySelector('header .badges');
 // 배지를 숨기고 보이게 하는 것은 따로 클래스로 지정해서 추가하고 삭제하도록 한다.
 // gsap 에서의 to 메서드를 통해서 요소와, 지속시간, 옵션을 인자로 보낸다.
 
+const toTopEl = document.querySelector('#to-top');
+
 window.addEventListener(
   'scroll',
   _.throttle(() => {
@@ -42,14 +44,28 @@ window.addEventListener(
         opacity: 0,
         display: 'none',
       });
+      // 버튼 보이기
+      gsap.to('#to-top', 0.2, {
+        x: 0,
+      });
     } else {
       gsap.to(badgeEl, 0.6, {
         opacity: 1,
         display: 'block',
       });
+      // 버튼 숨기기
+      gsap.to('#to-top', 0.2, {
+        x: 100,
+      });
     }
   }, 300),
 );
+
+toTopEl.addEventListener('click', () => {
+  gsap.to(window, 0.7, {
+    scrollTo: 0,
+  });
+});
 
 // fade-in을 클래스로 갖는 요소들을 배열에 할당한다.
 const fadeEls = document.querySelectorAll('.visual .fade-in');
@@ -150,4 +166,3 @@ spyEls.forEach(spyEl => {
 
 const thisYear = document.querySelector('.this-year');
 thisYear.textContent = new Date().getFullYear();
-
