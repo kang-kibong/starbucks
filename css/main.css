@@ -1,11 +1,11 @@
 /* COMMON */
 body {
   color: #333;
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
-  height: 3000px;
+  height: 6000px;
 }
 
 img {
@@ -59,7 +59,6 @@ a {
 
 .btn.btn--gold {
   color: #d9aa9a;
-  background-color: #d9aa8a;
 }
 
 .btn.btn--white {
@@ -115,7 +114,7 @@ header .sub-menu ul.menu li {
 
 /* 각 서브메뉴 마다 구분선을 추가한다. */
 header .sub-menu ul.menu li::before {
-  content: "";
+  content: '';
   /* display: block; */
   width: 1px;
   height: 12px;
@@ -263,7 +262,7 @@ header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover {
 header .main-menu .item .item__contents .contents__texture {
   padding: 26px 0;
   font-size: 12px;
-  background-image: url("../images/main_menu_pattern.jpg");
+  background-image: url('../images/main_menu_pattern.jpg');
 }
 
 header .main-menu .item .item__contents .contents__texture h4 {
@@ -296,7 +295,7 @@ header .badges .badge {
 /* VISUAL */
 .visual {
   margin-top: 120px;
-  background-image: url("../images/visual_bg.jpg");
+  background-image: url('../images/visual_bg.jpg');
   background-position: center;
 }
 
@@ -419,11 +418,7 @@ header .badges .badge {
   align-items: center;
 }
 
-.notice
-  .notice-line
-  .inner__left
-  .notice-line__more
-  .material-symbols-outlined {
+.notice .notice-line .inner__left .notice-line__more .material-symbols-outlined {
   color: #fff;
   font-size: 30px;
 }
@@ -450,11 +445,7 @@ header .badges .badge {
   align-items: center;
 }
 
-.notice
-  .notice-line
-  .inner__right
-  .toggle-promotion
-  .material-symbols-outlinedi {
+.notice .notice-line .inner__right .toggle-promotion .material-symbols-outlinedi {
   font-size: 30px;
 }
 
@@ -510,7 +501,7 @@ header .badges .badge {
 
 .notice .promotion .swiper-pagination .swiper-pagination-bullet {
   background-color: transparent;
-  background-image: url("../images/promotion_slide_pager.png");
+  background-image: url('../images/promotion_slide_pager.png');
   width: 12px;
   height: 12px;
   margin-right: 6px;
@@ -522,7 +513,7 @@ header .badges .badge {
 }
 
 .notice .promotion .swiper-pagination .swiper-pagination-bullet-active {
-  background-image: url("../images/promotion_slide_pager_on.png");
+  background-image: url('../images/promotion_slide_pager_on.png');
 }
 
 .notice .promotion .swiper-prev,
@@ -581,7 +572,7 @@ header .badges .badge {
 }
 
 .rewards .inner {
-  background-image: url("../images/rewards.jpg");
+  background-image: url('../images/rewards.jpg');
   height: 241px;
 }
 
@@ -625,7 +616,7 @@ header .badges .badge {
 }
 
 .youtube .youtube__area::before {
-  content: "";
+  content: '';
   display: block;
   width: 100%;
   height: 0;
@@ -633,7 +624,7 @@ header .badges .badge {
 }
 
 .youtube .youtube__cover {
-  background-image: url("../images/video_cover_pattern.png");
+  background-image: url('../images/video_cover_pattern.png');
   background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   top: 0;
@@ -670,4 +661,92 @@ header .badges .badge {
   position: absolute;
   bottom: -200px;
   right: 0;
+}
+
+/* SEASON PRODUCT */
+.season-product {
+  background-image: url('../images/season_product_bg.jpg');
+}
+.season-product .inner {
+  height: 400px;
+}
+
+.season-product .floating3 {
+  position: absolute;
+  top: -200px;
+  right: 0;
+}
+
+.season-product .text-group {
+  position: absolute;
+  top: 110px;
+  right: 100px;
+}
+
+.season-product .text-group .title {
+  margin-bottom: 10px;
+}
+
+.season-product .text-group .description {
+  margin-bottom: 15px;
+}
+
+.season-product .text-group .more {
+}
+
+/* RESERVE COFFEE */
+.reserve-coffee {
+  background-image: url('../images/reserve_bg.jpg');
+}
+
+.reserve-coffee .inner {
+  height: 400px;
+}
+
+.reserve-coffee .reserve-loro {
+  position: absolute;
+  top: 110px;
+  left: 0;
+}
+
+.reserve-coffee .text-group {
+  position: absolute;
+  top: 124px;
+  left: 208px;
+}
+
+.reserve-coffee .product {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* PICK YOUR FAVORITE */
+.pick-your-favorite {
+  background-image: url('../images/favorite_bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  /* scroll시 배경화면이 멈춰있도록 하는 속성 => Parallax */
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.pick-your-favorite .inner {
+  padding: 110px 0;
+}
+
+.pick-your-favorite .text-group {
+  display: flex;
+  width: 362px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-left: 100px;
+}
+
+.pick-your-favorite .text-group .title {
+  margin-bottom: 40px;
+}
+
+.pick-your-favorite .text-group .description {
+  margin-bottom: 40px;
 }
